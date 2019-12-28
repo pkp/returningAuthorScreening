@@ -21,6 +21,10 @@ class DefaultScreeningPlugin extends GenericPlugin {
 		$success = parent::register($category, $path, $mainContextId);
 		if (!Config::getVar('general', 'installed') || defined('RUNNING_UPGRADE')) return true;
 		if ($success && $this->getEnabled($mainContextId)) {
+
+			// By default PPS will not allow authors to publish. Override the default so that custom publising rulesets can be used.
+			\HookRegistry::register('Publication::canAuthorPublish', [$this, 'setAuthorsCanPublish']);
+
 			// Add a new ruleset for publishing
 			// Always apply rules to just authors
 			\HookRegistry::register('Publication::validatePublish', [$this, 'applyRuleset']);
@@ -50,6 +54,17 @@ class DefaultScreeningPlugin extends GenericPlugin {
 	 */
 	public function getDescription() {
 		return __('plugins.generic.defaultScreening.description');
+	}
+
+	/**
+	 * Let authors publish when this plugin is enabled
+	 *
+	 * @param string $hookName string
+	 * @param array $args
+	 * @return boolean
+	 */
+	function setAuthorsCanPublish($hookName, $args) {
+		return true;
 	}
 
 	/**
