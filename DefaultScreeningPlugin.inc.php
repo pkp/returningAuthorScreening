@@ -22,15 +22,25 @@ class DefaultScreeningPlugin extends GenericPlugin {
 		if (!Config::getVar('general', 'installed') || defined('RUNNING_UPGRADE')) return true;
 		if ($success && $this->getEnabled($mainContextId)) {
 
-			// By default PPS will not allow authors to publish. Override the default so that custom publishing rulesets can be used.
+			// By default PPS installation will not allow authors to publish. Override the default so that custom publishing rulesets can be used.
 			\HookRegistry::register('Publication::canAuthorPublish', [$this, 'setAuthorCanPublish']);
 
 			// Add a new ruleset for publishing
-			// Always apply rules to just authors
-			\HookRegistry::register('Publication::validatePublish', [$this, 'applyRuleset']);
+			\HookRegistry::register('Publication::validatePublish', [$this, 'validate']);
+
+			// Test validation rules in this plugin
+			\HookRegistry::register('Publication::testAuthorValidatePublish', [$this, 'validateTest']);
+
+			// Show plugin rules for editors in settings
+			\HookRegistry::register('Settings::Workflow::listScreeningPlugins', [$this, 'listRules']);
+
 		}
 		return $success;
 	}
+
+	//
+	// Required functions for all PPS screening plugins
+	//
 
 	/**
 	 * Provide a name for this plugin
@@ -68,7 +78,23 @@ class DefaultScreeningPlugin extends GenericPlugin {
 	}
 
 	/**
-	 * Add a new ruleset for publishing
+	 * Show plugin rules for editors in settings
+	 *
+	 * @param string $hookName string
+	 * @param array $args
+	 * @return array $rules
+	 */
+	function listRules($hookName, $args) {
+		$rules =& $args[0];
+		$pluginRules['hasPublishedBefore'] = 
+			"<p>" . $this->getDisplayName() . "<br />\n" . 
+			__('plugins.generic.defaultScreening.required.publishedBefore') . "</p>\n";
+		$rules = array_merge($rules, $pluginRules);
+		return $rules;
+	}
+
+	/**
+	 * Validate publish, only apply rules to authors
 	 *
 	 * @param string $hookName string
 	 * @param array $args [[
@@ -76,25 +102,66 @@ class DefaultScreeningPlugin extends GenericPlugin {
 	 * 	@option errors array
 	 * 	@option Publication
 	 * ]]
-	 * @return errors
+	 * @return array $errors
 	 */
-	function applyRuleset($hookName, $args) {
+	function validate($hookName, $args) {
 		$errors =& $args[0];
 		$publication = $args[1];
 		$currentUser = \Application::get()->getRequest()->getUser();
+		$currentContext = \Application::get()->getRequest()->getContext();
 
 		// Only apply rules to authors, editors can always publish if other criteria is met
 		if ($this->_isAuthor($currentUser->getId(), $publication->getData('submissionId'))){
 
-			// Check that user has published before
-			$currentContext = \Application::get()->getRequest()->getContext();
-			if (!$this->_hasPublishedBefore($currentUser->getId(), $currentContext->getId())) {
-				$errors['hasPublishedBefore'] = __('plugins.generic.defaultScreening.required.publishedBefore');
-			}
+			$errors = array_merge(
+				$errors,
+				$this->applyRules($currentUser->getId(), $currentContext->getId(), $publication->getData('submissionId'))
+			);
 
 		}
 		return false;
 	}
+
+	/**
+	 * Test validation rules with any user, context and submission
+	 * 
+	 * @param string $hookName string
+	 * @param array $args [[
+	 * 	@option array Additional parameters passed with the hook
+	 * 	@option int $userId
+	 * 	@option int $contextId
+	 * 	@option int $submissionId
+	 * ]]
+	 * @return array $errors
+	 */
+	function validateTest($hookName, $args) {
+		$errors =& $args[0];
+		$userId = $args[1];
+		$contextId = $args[2];
+		$submissionId = $args[3];
+		$errors = array_merge($errors, $this->applyRules($userId, $contextId, $submissionId));
+		return $errors;
+	}
+
+	/**
+	 * Apply rules used in this screening plugin and return errors
+	 * @param int $userId
+	 * @param int $contextId
+	 * @param int $submissionId
+	 * @return array $errors
+	 */
+	function applyRules($userId, $contextId, $submissionId) {
+		$errors = [];
+		// Check that user has published before
+		if (!$this->_hasPublishedBefore($userId, $contextId)) {
+			$errors['hasPublishedBefore'] = __('plugins.generic.defaultScreening.required.publishedBefore');
+		}
+		return $errors;
+	}
+
+	//
+	// Custom rules for this screening plugin
+	//
 
 	/**
 	 * Check if user has published before in this context
@@ -117,8 +184,12 @@ class DefaultScreeningPlugin extends GenericPlugin {
 		return false;
 	}
 
+	//
+	// Helpers
+	//
+
 	/**
-	 * Check if current user is the author
+	 * Check if current user is the author of the submission
 	 * @param int $userId
 	 * @param int $submissionId
 	 * @return boolean
@@ -131,4 +202,5 @@ class DefaultScreeningPlugin extends GenericPlugin {
 		}
 		return false;
 	}
+
 }
