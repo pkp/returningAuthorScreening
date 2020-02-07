@@ -22,7 +22,7 @@ class DefaultScreeningPlugin extends GenericPlugin {
 		if (!Config::getVar('general', 'installed') || defined('RUNNING_UPGRADE')) return true;
 		if ($success && $this->getEnabled($mainContextId)) {
 
-			// By default PPS installation will not allow authors to publish. Override the default so that custom publishing rulesets can be used.
+			// By default OPS installation will not allow authors to publish. Override the default so that custom publishing rulesets can be used.
 			\HookRegistry::register('Publication::canAuthorPublish', [$this, 'setAuthorCanPublish']);
 
 			// Add a new ruleset for publishing
@@ -39,7 +39,7 @@ class DefaultScreeningPlugin extends GenericPlugin {
 	}
 
 	//
-	// Required functions for all PPS screening plugins
+	// Required functions for all OPS screening plugins
 	//
 
 	/**
