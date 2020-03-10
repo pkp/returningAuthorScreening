@@ -1,18 +1,18 @@
 <?php
 /**
- * @file plugins/generic/defaultScreening/DefaultScreeningPlugin.inc.php
+ * @file plugins/generic/returningAuthorScreening/ReturningAuthorScreeningPlugin.inc.php
  *
- * Copyright (c) 2017-2019 Simon Fraser University
- * Copyright (c) 2017-2019 John Willinsky
- * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ * Copyright (c) 2014-2020 Simon Fraser University
+ * Copyright (c) 2017-2020 John Willinsky
+ * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
- * @class DefaultScreeningPlugin
- * @ingroup plugins_generic_defaultScreening
+ * @class ReturningAuthorScreeningPlugin
+ * @ingroup plugins_generic_returningAuthorScreening
  *
  * @brief Plugin class for the DefaultScreening plugin.
  */
 import('lib.pkp.classes.plugins.GenericPlugin');
-class DefaultScreeningPlugin extends GenericPlugin {
+class ReturningAuthorScreeningPlugin extends GenericPlugin {
 
 	/**
 	 * @copydoc GenericPlugin::register()
@@ -51,7 +51,7 @@ class DefaultScreeningPlugin extends GenericPlugin {
 	 * @return string
 	 */
 	public function getDisplayName() {
-		return __('plugins.generic.defaultScreening.displayName');
+		return __('plugins.generic.returningAuthorScreening.displayName');
 	}
 
 	/**
@@ -63,7 +63,7 @@ class DefaultScreeningPlugin extends GenericPlugin {
 	 * @return string
 	 */
 	public function getDescription() {
-		return __('plugins.generic.defaultScreening.description');
+		return __('plugins.generic.returningAuthorScreening.description');
 	}
 
 	/**
@@ -88,7 +88,7 @@ class DefaultScreeningPlugin extends GenericPlugin {
 		$rules =& $args[0];
 		$pluginRules['hasPublishedBefore'] = 
 			"<p>" . $this->getDisplayName() . "<br />\n" . 
-			__('plugins.generic.defaultScreening.required.publishedBefore') . "</p>\n";
+			__('plugins.generic.returningAuthorScreening.required.publishedBefore') . "</p>\n";
 		$rules = array_merge($rules, $pluginRules);
 		return $rules;
 	}
@@ -154,7 +154,7 @@ class DefaultScreeningPlugin extends GenericPlugin {
 		$errors = [];
 		// Check that user has published before
 		if (!$this->_hasPublishedBefore($userId, $contextId)) {
-			$errors['hasPublishedBefore'] = __('plugins.generic.defaultScreening.required.publishedBefore');
+			$errors['hasPublishedBefore'] = __('plugins.generic.returningAuthorScreening.required.publishedBefore');
 		}
 		return $errors;
 	}
