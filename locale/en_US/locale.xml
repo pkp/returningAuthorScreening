@@ -11,5 +11,5 @@
 <locale name="en_US" full_name="U.S. English">
 	<message key="plugins.generic.returningAuthorScreening.displayName">Returning Author Screening Plugin</message>
 	<message key="plugins.generic.returningAuthorScreening.description">Rules: Authors can only publish if they have prior publications on the same server.</message>
-	<message key="plugins.generic.returningAuthorScreening.required.publishedBefore">You need to have at least one published publication on this server.</message>
+	<message key="plugins.generic.returningAuthorScreening.required.publishedBefore">You need to have at least one published preprint on this server. The first preprint must be approved by a moderator.</message>
 </locale>
