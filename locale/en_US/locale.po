@@ -15,7 +15,14 @@ msgid "plugins.generic.returningAuthorScreening.displayName"
 msgstr "Returning Author Screening Plugin"
 
 msgid "plugins.generic.returningAuthorScreening.description"
-msgstr "Rules: Authors can only publish if they have prior publications on the same server."
+msgstr "Rules: Authors can only post if they have prior preprints on the same server."
 
-msgid "plugins.generic.returningAuthorScreening.required.publishedBefore"
-msgstr "You need to have at least one published preprint on this server. The first preprint must be approved by a moderator."
+msgid "plugins.generic.returningAuthorScreening.required.listRules"
+msgstr "The author needs to have at least one posted preprint on this server before they can post new preprints by themselves. The first preprint must be approved by a moderator."
+
+msgid "plugins.generic.returningAuthorScreening.required.rules.author"
+msgstr "A moderator must approve your first preprint before it can be posted. Once you have one approved preprint you will be allowed to post your own updates."
+
+msgid "plugins.generic.returningAuthorScreening.required.rules.moderator"
+msgstr "A moderator must approve your first preprint before it can be posted. You are not allowed to approve your own preprints."
+

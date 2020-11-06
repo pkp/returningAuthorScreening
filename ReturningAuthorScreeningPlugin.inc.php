@@ -88,7 +88,7 @@ class ReturningAuthorScreeningPlugin extends GenericPlugin {
 		$rules =& $args[0];
 		$pluginRules['hasPublishedBefore'] = 
 			"<p>" . $this->getDisplayName() . "<br />\n" . 
-			__('plugins.generic.returningAuthorScreening.required.publishedBefore') . "</p>\n";
+			__('plugins.generic.returningAuthorScreening.required.listRules') . "</p>\n";
 		$rules = array_merge($rules, $pluginRules);
 		return $rules;
 	}
@@ -154,7 +154,14 @@ class ReturningAuthorScreeningPlugin extends GenericPlugin {
 		$errors = [];
 		// Check that user has published before
 		if (!$this->_hasPublishedBefore($userId, $contextId)) {
-			$errors['hasPublishedBefore'] = __('plugins.generic.returningAuthorScreening.required.publishedBefore');
+			// Show screening rules depending on the user role
+			$userDao = DAORegistry::getDAO('UserDAO'); /* @var $userDao UserDAO */
+			$user = $userDao->getById($userId);
+			if ($user->hasRole(array(ROLE_ID_MANAGER, ROLE_ID_SUB_EDITOR), $contextId)) {
+				$errors['hasPublishedBefore'] = __('plugins.generic.returningAuthorScreening.required.rules.moderator');
+			} else {
+				$errors['hasPublishedBefore'] = __('plugins.generic.returningAuthorScreening.required.rules.author');
+			}
 		}
 		return $errors;
 	}
