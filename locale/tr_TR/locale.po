@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-06-20 15:39+0000\n"
+"PO-Revision-Date: 2020-11-10 08:55+0000\n"
 "Last-Translator: Hüseyin Körpeoğlu <yoruyenturk@hotmail.com>\n"
 "Language-Team: Turkish <http://translate.pkp.sfu.ca/projects/plugins/"
 "returningAuthorScreening/tr_TR/>\n"
@@ -23,3 +23,20 @@ msgstr ""
 
 msgid "plugins.generic.returningAuthorScreening.displayName"
 msgstr "Yazar Ekranına Dönme Eklentisi"
+
+msgid "plugins.generic.returningAuthorScreening.required.rules.moderator"
+msgstr ""
+"Gönderilmeden önce bir moderatörün ilk ön baskınızı onaylaması gerekir. "
+"Kendi ön baskılarınızı onaylamanıza izin verilmez."
+
+msgid "plugins.generic.returningAuthorScreening.required.rules.author"
+msgstr ""
+"Gönderilmeden önce bir moderatörün ilk ön baskınızı onaylaması gerekir. "
+"Onaylanmış bir ön baskıya sahip olduğunuzda, kendi güncellemelerinizi "
+"göndermenize izin verilecektir."
+
+msgid "plugins.generic.returningAuthorScreening.required.listRules"
+msgstr ""
+"Yazarın kendi başına yeni ön baskı gönderebilmesi için bu sunucuda en az bir "
+"ön baskı yayınlaması gerekir. İlk ön baskı bir moderatör tarafından "
+"onaylanmalıdır."
