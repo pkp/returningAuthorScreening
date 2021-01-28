@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-01-16 23:53+0000\n"
-"Last-Translator: Eirik Hanssen <eirikh@oslomet.no>\n"
+"PO-Revision-Date: 2021-01-28 22:54+0000\n"
+"Last-Translator: Tormod Strømme <tormod.stromme@uib.no>\n"
 "Language-Team: Norwegian Bokmål <http://translate.pkp.sfu.ca/projects/"
 "plugins/returningAuthorScreening/nb_NO/>\n"
 "Language: nb_NO\n"
@@ -13,7 +13,7 @@ msgstr ""
 
 msgid "plugins.generic.returningAuthorScreening.required.rules.moderator"
 msgstr ""
-"En moderator må godkjenne din første preprint før det kan leveres inn. Du "
+"En moderator må godkjenne din første preprint før den kan leveres inn. Du "
 "har ikke tilgang til å godkjenne dine egne preprints."
 
 msgid "plugins.generic.returningAuthorScreening.required.rules.author"
