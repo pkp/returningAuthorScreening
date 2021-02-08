@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2021-02-09 08:32+0000\n"
-"Last-Translator: Teodora Fildishevska <t.fildishevska@gmail.com>\n"
+"Last-Translator: Jovan Jonovski <jonovski@hotmail.com>\n"
 "Language-Team: Macedonian <http://translate.pkp.sfu.ca/projects/plugins/"
 "returningAuthorScreening/mk_MK/>\n"
 "Language: mk_MK\n"
@@ -16,9 +16,8 @@ msgstr ""
 "Правила: Автори можат да да објавуваат само ако имаат претходни отпечатоци "
 "на истиот сервер."
 
-#, fuzzy
 msgid "plugins.generic.returningAuthorScreening.displayName"
-msgstr "Returning Author Screening Plugin"
+msgstr "Го враќа плагинот за Преглед од авторот"
 
 msgid "plugins.generic.returningAuthorScreening.required.rules.moderator"
 msgstr ""
