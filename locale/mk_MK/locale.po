@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-02-06 04:07+0000\n"
+"PO-Revision-Date: 2021-02-09 08:32+0000\n"
 "Last-Translator: Teodora Fildishevska <t.fildishevska@gmail.com>\n"
 "Language-Team: Macedonian <http://translate.pkp.sfu.ca/projects/plugins/"
 "returningAuthorScreening/mk_MK/>\n"
@@ -11,12 +11,28 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n==1 || n%10==1 ? 0 : 1;\n"
 "X-Generator: Weblate 3.9.1\n"
 
-#, fuzzy
 msgid "plugins.generic.returningAuthorScreening.description"
 msgstr ""
-"Правила: Автори можат да да објавуваат само ако имаат претходни preprints на "
-"истиот сервер."
+"Правила: Автори можат да да објавуваат само ако имаат претходни отпечатоци "
+"на истиот сервер."
 
 #, fuzzy
 msgid "plugins.generic.returningAuthorScreening.displayName"
 msgstr "Returning Author Screening Plugin"
+
+msgid "plugins.generic.returningAuthorScreening.required.rules.moderator"
+msgstr ""
+"Вашиот прв отпечаток мора да биде одобрен од модератор пред да може да биде "
+"објавен. Не смеете да ги одобрувате вашите сопствени отпечатоци."
+
+msgid "plugins.generic.returningAuthorScreening.required.rules.author"
+msgstr ""
+"Вашиот прв отпечаток мора да биде одобрен од модератор пред да може да биде "
+"објавен. Кога ќе имате еден одобрен отпечаток, ќе можете сами да ги "
+"објавувате вашите ажурирања."
+
+msgid "plugins.generic.returningAuthorScreening.required.listRules"
+msgstr ""
+"Авторот треба да има најмалку еден објавен отпечаток на овој сервер пред да "
+"може сам да објавува нови отпечатоци. Првиот отпечаток мора да биде одобрен "
+"од модераторот."
