@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-06-20 15:39+0000\n"
+"PO-Revision-Date: 2020-12-14 14:52+0000\n"
 "Last-Translator: Primož Svetek <primoz.svetek@gmail.com>\n"
 "Language-Team: Slovenian <http://translate.pkp.sfu.ca/projects/plugins/"
 "returningAuthorScreening/sl_SI/>\n"
@@ -24,3 +24,19 @@ msgstr ""
 
 msgid "plugins.generic.returningAuthorScreening.displayName"
 msgstr "Vtičnik za že objavljene avtorje"
+
+msgid "plugins.generic.returningAuthorScreening.required.rules.moderator"
+msgstr ""
+"Vaš prvi prispevek mora biti odobren s strani moderatorja, preden je "
+"objavljen.  Sami ne morete odobriti svojega prispevka."
+
+msgid "plugins.generic.returningAuthorScreening.required.rules.author"
+msgstr ""
+"Vaš prvi prispevek mora biti odobren s strani moderatorja, preden je "
+"objavljen. Ko bo prispevek odobren, boste lahko sami oddajali nove prispevke."
+
+msgid "plugins.generic.returningAuthorScreening.required.listRules"
+msgstr ""
+"Avtorji potrebujejo oddan vsaj en prispevek na tem strežniku preden lahko "
+"sami oddajajo nove prispevke. Prvi prispevek mora biti odobren s strani "
+"moderatorja."
