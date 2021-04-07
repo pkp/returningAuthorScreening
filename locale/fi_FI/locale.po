@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-10-19 15:42+0000\n"
+"PO-Revision-Date: 2021-04-08 19:55+0000\n"
 "Last-Translator: Antti-Jussi Nygård <ajnyga@gmail.com>\n"
 "Language-Team: Finnish <http://translate.pkp.sfu.ca/projects/plugins/"
 "returningAuthorScreening/fi_FI/>\n"
@@ -18,8 +18,6 @@ msgstr ""
 
 msgid "plugins.generic.returningAuthorScreening.description"
 msgstr ""
-"Säännöt: kirjoittajat voivat julkaista, jos heillä on aiempia julkaisuja "
-"palvelimella."
 
 msgid "plugins.generic.returningAuthorScreening.displayName"
 msgstr "Palaavan kirjoittajan seulonta -lisäosa"
