@@ -1,0 +1,38 @@
+# Studiorimau <studiorimau@gmail.com>, 2021.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-10-26 08:07+0000\n"
+"Last-Translator: Studiorimau <studiorimau@gmail.com>\n"
+"Language-Team: Malay <http://translate.pkp.sfu.ca/projects/plugins/"
+"returningAuthorScreening/ms/>\n"
+"Language: ms\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.9.1\n"
+
+msgid "plugins.generic.returningAuthorScreening.required.rules.moderator"
+msgstr ""
+"Seorang moderator mesti meluluskan pracetak pertama anda sebelum ia boleh "
+"disiarkan. Anda tidak dibenarkan meluluskan pracetak anda sendiri."
+
+msgid "plugins.generic.returningAuthorScreening.required.rules.author"
+msgstr ""
+"Seorang moderator mesti meluluskan pracetak pertama anda sebelum ia boleh "
+"disiarkan. Sebaik sahaja anda mempunyai satu pracetak yang diluluskan, anda "
+"akan dibenarkan untuk menyiarkan kemas kini anda sendiri."
+
+msgid "plugins.generic.returningAuthorScreening.required.listRules"
+msgstr ""
+"Pengarang perlu mempunyai sekurang-kurangnya satu pracetak disiarkan pada "
+"pelayan ini sebelum mereka boleh menyiarkan pracetak baharu sendiri. "
+"Pracetak pertama mesti diluluskan oleh moderator."
+
+msgid "plugins.generic.returningAuthorScreening.description"
+msgstr ""
+"Peraturan: Pengarang hanya boleh menyiarkan jika mereka mempunyai pracetak "
+"terdahulu pada pelayan yang sama."
+
+msgid "plugins.generic.returningAuthorScreening.displayName"
+msgstr "Kembali ke Plugin Author Screening"
