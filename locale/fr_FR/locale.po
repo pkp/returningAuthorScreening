@@ -1,8 +1,40 @@
 # Weblate Admin <alec@smecher.bc.ca>, 2023.
+# Germán Huélamo Bautista <germanhuelamo@gmail.com>, 2024.
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2024-07-26 09:40+0000\n"
+"Last-Translator: Germán Huélamo Bautista <germanhuelamo@gmail.com>\n"
+"Language-Team: French <http://translate.pkp.sfu.ca/projects/plugins/"
+"returningAuthorScreening/fr_FR/>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Weblate\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.18.2\n"
+
+msgid "plugins.generic.returningAuthorScreening.required.listRules"
+msgstr ""
+"L'auteur·e doit avoir publié au moins une prépublication sur ce serveur "
+"avant de pouvoir en publier une nouvelle. Le premier préprint doit être "
+"approuvé par un modérateur."
+
+msgid "plugins.generic.returningAuthorScreening.required.rules.moderator"
+msgstr ""
+"Un·e modérateur·rice doit approuver votre première prépublication avant "
+"qu'elle ne soit publiée. Vous ne pouvez pas approuver vos propres "
+"prépublications."
+
+msgid "plugins.generic.returningAuthorScreening.displayName"
+msgstr "Module de détection des auteur·e·s récurrent·e·s"
+
+msgid "plugins.generic.returningAuthorScreening.description"
+msgstr ""
+"Règles : Les auteur·e·s ne peuvent publier que si une autre de leurs "
+"prépublications a déjà été publiée sur le même serveur."
+
+msgid "plugins.generic.returningAuthorScreening.required.rules.author"
+msgstr ""
+"Un·e modérateur·rice doit approuver votre premier prépublication avant "
+"qu'elle ne puisse être publiée. Une fois votre prépublication approuvée, "
+"vous pourrez publier vos propres mises à jour."
